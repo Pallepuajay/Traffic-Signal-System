@@ -1,0 +1,36 @@
+<div class="container">
+
+
+    <h1 class="project-title">Traffic Signal System</h1>
+
+  <!-- Traffic Light + Timer wrapper -->
+
+  <div class="signal-wrapper">
+
+    <!-- Timer on top of lights -->
+    <div class="timer" [style.color]="currentLight">
+  <p>Timer:</p> {{ ' ' + remainingTime }}s
+
+
+</div>
+
+    <!-- Traffic Light -->
+    <app-traffic-light [currentLight]="currentLight"></app-traffic-light>
+  </div>
+
+  <!-- All buttons -->
+  <div class="controls">
+    <button (click)="autoMode ? stopAuto() : startAuto()" 
+            [style.background]="autoMode ? 'green' : '#007bff'">
+      {{ autoMode ? 'Stop Auto' : 'Start Auto' }}
+    </button>
+
+    <button (click)="toggleNightMode()" 
+            [style.background]="nightMode ? 'orange' : '#007bff'">
+      {{ nightMode ? 'Night Mode On' : 'Night Mode Off' }}
+    </button>
+
+    <button class="emergency" (click)="emergencyMode()">Emergency Vehicle</button>
+  </div>
+
+</div>

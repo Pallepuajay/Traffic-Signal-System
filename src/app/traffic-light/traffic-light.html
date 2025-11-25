@@ -1,0 +1,9 @@
+<div class="signal">
+  <div class="light red"    [class.active]="currentLight === 'red'"></div>
+  <div class="light yellow" [class.active]="currentLight === 'yellow'"></div>
+  <div class="light green"  [class.active]="currentLight === 'green'"></div>
+</div>
+<div class="light yellow"
+     [class.active]="currentLight === 'yellow'"
+     [class.off]="currentLight === 'off'">
+</div>
